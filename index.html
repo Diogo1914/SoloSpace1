@@ -1,18 +1,54 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>my-first-website</title>
-  <LINK href="styles.css" rel="stylesheet" type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Sharp|Material+Icons+Round|Material+Icons+Two+Tone"
+    rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="theme-color" content="#1BA68C">
+  <meta name="description"
+    content="SoloLearn Code Previewer and downloader is a tool for previewing and downloading the sololearn codes. You just have to Enter The URL of your code.">
+  <meta name="keywords"
+    content="sololearn, sl, previewer, sololearn code previewer, sololearn code downloader, code downloader, tool,tools, utilities,code previewer,sololearn tool, sl tool, google, twitter, help,code,html,css,js,javascript,coding,programming,programmer,coder,arnav,arnav-kr,arnav-kumar,arnav kumar, kumar,github,source code,source,code">
+  <link rel="shortcut icon" href="./res/images/icon-512x512.png" type="image/x-icon">
+  <link rel="manifest" href="./res/assets/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./res/images/icon-512x512.png">
+  <title>Visualizador e Instalador de código | Sololearn</title>
+  <link rel="stylesheet" href="./res/css/style.css">
+  <script src="./res/js/script.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall@latest/dist/pwa-install.min.js"></script>
 </head>
 
 <body>
-
-<img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" id="octocat" alt="octocat-gif" />
-
-<!-- Change this code here by copy and pasting your template on line 15 -->
-<p>Welcome to your first GitHub Pages website!</p>
-
+  <header id="nav">
+    <div class="nav">
+      <form onsubmit="Code(event)">
+        <a id="launch-in-browser" target="_blank"><button type="button" title="launch in SoloLearn"
+            class="go-to-browser"><span class="material-icons-round">launch</span></button></a>
+        <button type="button" id="share" title="Share Code" class="share"><span
+            class="material-icons-round">share</span></button>
+        <a id="download" target="_blank"><button type="button" title="Download Source Code" class="download"><span
+              class="material-icons-round">download</span></button></a>
+        <button id="copy" type="button" title="Copy Source Code" class="copy"><span
+            class="material-icons-round">copy</span></button>
+        <input name="url" placeholder="Enter Code url" class="nav-search" type="text" id="url">
+        <button type="submit" id="go" class="search-submit"><span class="material-icons-round"
+            title="Search">search</span></button>
+      </form>
+    </div>
+  </header>
+  <main id="main">
+    <iframe title="Code Preview" id="main-frame" name="main-frame" sandbox="allow-downloads-without-user-activation allow-downloads allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-scripts allow-same-origin allow-storage-access-by-user-activation allow-top-navigation-by-user-activation allow-top-navigation-by-user-activation" allow="accelerometer; camera; encrypted-media; geolocation; gyroscope; microphone; midi; clipboard-read; clipboard-write" allowTransparency="true"
+      allowpaymentrequest="true" allowfullscreen="true"></iframe>
+  </main>
+  <div class="frame-loader hide" id="frame-loader">
+    <div class="inline-loader" role="loader"></div>
+  </div>
+  <label for="code-box" class="hide"></label>
+  <textarea width="0" height="0" readonly id="code-box"></textarea>
+  <script src="https://cdn.jsdelivr.net/gh/AssassinAguilar/Alertism/dist/V1.0.0/main.js"></script>
 </body>
+
 </html>
